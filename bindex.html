@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Leaderboard Shortcut: Exclusive Bonus for Bonus Builder AI</title>
+    <style>
+        /* --- General Styling (Dark/High-Tech Theme) --- */
+        :root {
+            --color-primary: #00ffff; /* Electric Blue */
+            --color-secondary: #ffffff; /* White */
+            --color-background: #121212; /* Dark Gray/Black */
+            --color-card: #1e1e1e; /* Slightly Lighter Dark */
+            --color-text: #e0e0e0; /* Light Gray Text */
+            --color-accent: #ff00ff; /* Magenta/Pink for extra pop */
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--color-background);
+            color: var(--color-text);
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        h1, h2, h3 {
+            color: var(--color-secondary);
+            text-align: center;
+            font-weight: 700;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            text-shadow: 0 0 10px var(--color-primary);
+            margin-bottom: 10px;
+        }
+
+        h2 {
+            font-size: 1.8em;
+            border-bottom: 2px solid var(--color-primary);
+            padding-bottom: 10px;
+            margin-top: 40px;
+        }
+
+        /* --- CTA Button Styling (Animated) --- */
+        .cta-button {
+            display: block;
+            width: 90%;
+            max-width: 500px;
+            margin: 30px auto;
+            padding: 20px 10px;
+            background-color: var(--color-primary);
+            color: var(--color-background);
+            text-decoration: none;
+            font-size: 1.5em;
+            font-weight: bold;
+            border: none;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 0 20px var(--color-primary);
+            transition: all 0.3s ease-in-out;
+            animation: pulse 1.5s infinite alternate;
+        }
+
+        .cta-button:hover {
+            background-color: var(--color-secondary);
+            color: var(--color-background);
+            box-shadow: 0 0 30px var(--color-secondary);
+            transform: scale(1.05);
+        }
+
+        @keyframes pulse {
+            from { transform: scale(1); box-shadow: 0 0 15px var(--color-primary); }
+            to { transform: scale(1.02); box-shadow: 0 0 25px var(--color-primary); }
+        }
+
+        /* --- Countdown Timer --- */
+        #countdown-timer {
+            text-align: center;
+            margin: 20px 0;
+            padding: 15px;
+            background-color: var(--color-card);
+            border: 2px solid var(--color-accent);
+            border-radius: 8px;
+        }
+
+        #countdown-timer p {
+            font-size: 1.2em;
+            color: var(--color-accent);
+            margin: 5px 0;
+        }
+
+        #countdown-timer span {
+            font-size: 2.5em;
+            font-weight: bold;
+            color: var(--color-primary);
+            display: inline-block;
+            margin: 0 15px;
+            text-shadow: 0 0 5px var(--color-primary);
+        }
+
+        /* --- Product & Bonus Cards --- */
+        .product-features, .bonus-section {
+            padding: 20px;
+            background-color: var(--color-card);
+            border-radius: 10px;
+            margin-top: 30px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+        }
+
+        .feature-list {
+            list-style: none;
+            padding: 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .feature-list li {
+            background-color: #2a2a2a;
+            padding: 15px;
+            border-left: 3px solid var(--color-primary);
+            border-radius: 5px;
+        }
+
+        .bonus-card {
+            background-color: #2a2a2a;
+            border: 1px solid var(--color-primary);
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 25px;
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .bonus-card img {
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 8px;
+            border: 2px solid var(--color-primary);
+        }
+
+        .bonus-details h3 {
+            color: var(--color-primary);
+            text-align: left;
+            margin-top: 0;
+        }
+
+        .bonus-value {
+            color: var(--color-accent);
+            font-weight: bold;
+            font-size: 1.1em;
+            margin-bottom: 10px;
+        }
+
+        /* --- FAQ Section --- */
+        .faq-item {
+            margin-bottom: 15px;
+            padding: 15px;
+            background-color: #2a2a2a;
+            border-radius: 5px;
+        }
+
+        .faq-question {
+            font-weight: bold;
+            color: var(--color-primary);
+            cursor: pointer;
+        }
+
+        .faq-answer {
+            margin-top: 10px;
+            padding-left: 15px;
+            border-left: 2px solid var(--color-accent);
+            display: none; /* Hidden by default */
+        }
+
+        /* --- Footer --- */
+        footer {
+            text-align: center;
+            padding: 20px;
+            margin-top: 50px;
+            border-top: 1px solid #333;
+            font-size: 0.9em;
+        }
+
+        footer a {
+            color: var(--color-primary);
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        .affiliate-disclosure {
+            margin-top: 15px;
+            font-size: 0.8em;
+            color: #888;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            h1 { font-size: 2em; }
+            h2 { font-size: 1.5em; }
+            .bonus-card { flex-direction: column; text-align: center; }
+            .bonus-card img { margin-bottom: 15px; }
+            #countdown-timer span { font-size: 1.8em; margin: 0 10px; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <!-- I. HERO SECTION -->
+    <header>
+        <p style="text-align: center; color: var(--color-accent); font-size: 1.2em;">An Exclusive Bonus from Eunice M</p>
+        <h1>The Leaderboard Shortcut: Get Bonus Builder AI + Our Exclusive 4-Part System to Guarantee Vendor Approval & Instant Traffic!</h1>
+        <p style="text-align: center; font-size: 1.3em; color: var(--color-text);">Stop losing sales to super affiliates. Grab the AI tool that builds your bonus stack in 2 minutes, and we'll give you the **Traffic & Approval Strategy** to make sure you win.</p>
+    </header>
+
+    <!-- Countdown Timer -->
+    <div id="countdown-timer">
+        <p>WARNING: This Exclusive Bonus Stack Disappears When the Launch Closes!</p>
+        <div id="timer-display"></div>
+        <p style="font-size: 0.9em; color: var(--color-text);">Time Left to Secure the Lowest Price & All Bonuses</p>
+    </div>
+
+    <!-- Primary CTA -->
+    <a href="https://warriorplus.com/o2/a/fd0jtrx/0" class="cta-button">
+        YES! I Want The Leaderboard Shortcut & All 4 Exclusive Bonuses!
+    </a>
+
+    <!-- II. PERSONAL INTRODUCTION & CREDIBILITY -->
+    <section class="personal-intro">
+        <h2 style="text-align: left; border-bottom: 2px solid var(--color-accent);">From the Desk of Eunice M: Your Affiliate Edge</h2>
+        <p>Hi, I'm Eunice M, and I built this exclusive bonus stack because I know exactly what it takes to compete in affiliate marketing. **Bonus Builder AI** is the tool, and my bonuses are the strategy.</p>
+        <p>The biggest hurdle for new affiliates isn't the product; it's the **execution**. You need custom bonuses, but you also need traffic and the ability to get approved for the best offers. This is the complete system that solves all three problems, giving you the unfair advantage you need to hit the leaderboard.</p>
+    </section>
+
+    <!-- III. PRODUCT OVERVIEW (EXPANDED SALES POINTS) -->
+    <section class="product-features">
+        <h2>Why Bonus Builder AI Is Your New Secret Weapon</h2>
+        <p style="text-align: center; font-size: 1.1em; color: var(--color-primary);">This is the proven system that levels the playing field for every affiliate, boosting conversions by up to 400%.</p>
+        
+        <ul class="feature-list">
+            <li>
+                <h3>100% Custom, Hyper-Relevant Bonuses</h3>
+                <p>No more generic PLR. The AI analyzes the sales page URL and crafts unique, tailored bonus ideas that perfectly complement the main offer, making your promotion irresistible.</p>
+            </li>
+            <li>
+                <h3>Lightning-Fast Bonus Page Creation</h3>
+                <p>Go from idea to a fully branded, high-converting bonus page in under 2 minutes. Zero tech skills, zero design headaches. Just plug in and profit.</p>
+            </li>
+            <li>
+                <h3>Works with ANY Affiliate Offer</h3>
+                <p>Whether it's WarriorPlus, JVZoo, ClickBank, or any other platform, as long as you have the sales page URL, Bonus Builder AI can generate a winning campaign.</p>
+            </li>
+            <li>
+                <h3>Built by a Real Leaderboard Crusher</h3>
+                <p>Created by Kevin Fahey, this is the exact system he uses daily to boost his conversions and consistently top leaderboards. You're getting a proven method, not a theory.</p>
+            </li>
+        </ul>
+    </section>
+
+    <!-- IV. THE EXCLUSIVE BONUS STACK REVEAL (EXPANDED DESCRIPTIONS) -->
+    <section class="bonus-section">
+        <h2>&#9889; Your Exclusive Leaderboard Accelerator Bonus Stack (Only Available Here!) &#9889;</h2>
+        <p style="text-align: center; font-size: 1.5em; color: var(--color-accent);">Total Value: $268.00 | Yours FREE When You Buy Through My Link!</p>
+
+        <!-- Bonus 1 -->
+        <div class="bonus-card">
+            <img src="image11.png" alt="Vendor Approval Scripts Icon">
+            <div class="bonus-details">
+                <h3>1. The "Vendor Approval Accelerator" Script & Template Pack</h3>
+                <p class="bonus-value">Assigned Value: $97.00</p>
+                <p><strong>The Approval Key:</strong> This is the missing piece for new affiliates. You get copy-and-paste scripts and customizable email templates designed to bypass the common "no sales history" rejection. We show you how to professionally pitch vendors, secure approval for the hottest offers, and build the trust needed to scale your business immediately. Stop fighting for scraps and start promoting the big launches!</p>
+            </div>
+        </div>
+
+        <!-- Bonus 2 -->
+        <div class="bonus-card">
+            <img src="image12.png" alt="Traffic Surge Blueprint Icon">
+            <div class="bonus-details">
+                <h3>2. The "24-Hour Traffic Surge" Blueprint: 5 Free Methods</h3>
+                <p class="bonus-value">Assigned Value: $67.00</p>
+                <p><strong>Instant Buyer Traffic:</strong> You have a great bonus page, but where are the buyers? This blueprint outlines 5 free, fast-acting methods (Social Group Blitz, Forum Fast-Track, etc.) that you can implement in a single 24-hour period to drive targeted, buyer-ready visitors directly to your new Bonus Builder AI page. Maximize your launch window without spending a dime on ads.</p>
+            </div>
+        </div>
+
+        <!-- Bonus 3 -->
+        <div class="bonus-card">
+            <img src="image13.png" alt="Email Swipes Icon">
+            <div class="bonus-details">
+                <h3>3. 7 High-Converting Email Swipes for Your Campaigns</h3>
+                <p class="bonus-value">Assigned Value: $47.00</p>
+                <p><strong>The Promotion Engine:</strong> Don't waste time writing copy. This is a complete, plug-and-play 4-day email sequence (7 swipes total) designed to build curiosity, highlight your custom bonus stack, and leverage scarcity. Just fill in the blanks, load them into your autoresponder, and watch the clicks and conversions roll in.</p>
+            </div>
+        </div>
+
+        <!-- Bonus 4 -->
+        <div class="bonus-card">
+            <img src="image14.png" alt="Repurposing Checklist Icon">
+            <div class="bonus-details">
+                <h3>4. The 'Bonus Repurposing Power-Play' Checklist</h3>
+                <p class="bonus-value">Assigned Value: $57.00</p>
+                <p><strong>Content Multiplier:</strong> Get 5x the value from every bonus the AI creates. This checklist teaches you the content atomization process, showing you how to turn one custom guide into 5 distinct, authority-building assets (video scripts, social threads, lead magnets) for endless, long-term free traffic and brand building.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <a href="https://warriorplus.com/o2/a/fd0jtrx/0" class="cta-button">
+        Click Here to Get Bonus Builder AI + All 4 Exclusive Bonuses Now!
+    </a>
+
+    <!-- VI. FAQ SECTION -->
+    <section class="faq-section">
+        <h2>Frequently Asked Questions (FAQ)</h2>
+        <div class="faq-item">
+            <div class="faq-question">Q: Are these bonuses really exclusive to me?</div>
+            <div class="faq-answer">A: Absolutely. This 4-part system (Approval Scripts, Traffic Blueprint, Email Swipes, Repurposing Checklist) was custom-created by Eunice M specifically to complement the power of Bonus Builder AI. You will not find this exact stack anywhere else.</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">Q: How do I claim my bonuses after purchase?</div>
+            <div class="faq-answer">A: After you purchase Bonus Builder AI through the link on this page, your bonuses will be instantly available inside the WarriorPlus download area, right next to your access link for the main product.</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">Q: Will Bonus Builder AI work with ClickBank/JVZoo/Other offers?</div>
+            <div class="faq-answer">A: Yes! The core product is designed to work with ANY affiliate offer, as long as you have the sales page URL. Our bonus stack is designed to work with any promotion you run.</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">Q: What if I'm not happy with the product?</div>
+            <div class="faq-answer">A: Bonus Builder AI comes with a full 30-day money-back guarantee. If you are not satisfied for any reason, you can request a full refund. You have nothing to lose!</div>
+        </div>
+    </section>
+
+    <!-- VII. FOOTER SECTION -->
+    <footer>
+        <p>This is an exclusive bonus from Eunice M. My affiliate link is: <a href="https://warriorplus.com/o2/a/fd0jtrx/0">https://warriorplus.com/o2/a/fd0jtrx/0</a></p>
+        <div class="legal-links">
+            <a href="#">Terms of Service</a> |
+            <a href="#">Privacy Policy</a> |
+            <a href="#">Disclaimer</a> |
+            <a href="#">Support</a>
+        </div>
+        <div class="affiliate-disclosure">
+            **Affiliate Disclosure:** I am an independent affiliate for Bonus Builder AI. If you purchase the product through my link, I will receive a commission. I only promote products I believe in, and my exclusive bonus stack is my way of adding massive value to your purchase.
+        </div>
+        <p style="margin-top: 10px; color: var(--color-primary);">Powered by Bonus Builder AI</p>
+    </footer>
+
+</div>
+
+<script>
+    // --- Countdown Timer Logic ---
+    // Set the date we're counting down to (December 15th, 2025 EST)
+    const countDownDate = new Date("Dec 15, 2025 23:59:59 EST").getTime();
+
+    const x = setInterval(function() {
+        const now = new Date().getTime();
+        const distance = countDownDate - now;
+
+        // Time calculations for days, hours, minutes and seconds
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        // Display the result
+        document.getElementById("timer-display").innerHTML = 
+            "<span>" + days + "D</span>" + 
+            "<span>" + hours + "H</span>" + 
+            "<span>" + minutes + "M</span>" + 
+            "<span>" + seconds + "S</span>";
+
+        // If the countdown is finished, write some text
+        if (distance < 0) {
+            clearInterval(x);
+            document.getElementById("timer-display").innerHTML = "<span style='color: red;'>OFFER EXPIRED</span>";
+            document.querySelectorAll('.cta-button').forEach(button => {
+                button.style.backgroundColor = '#555';
+                button.style.boxShadow = 'none';
+                button.style.animation = 'none';
+                button.innerText = "OFFER EXPIRED - BONUSES REMOVED";
+            });
+        }
+    }, 1000);
+
+    // --- FAQ Toggle Logic ---
+    document.querySelectorAll('.faq-question').forEach(item => {
+        item.addEventListener('click', event => {
+            const answer = item.nextElementSibling;
+            if (answer.style.display === 'block') {
+                answer.style.display = 'none';
+            } else {
+                // Close all others before opening this one (optional)
+                document.querySelectorAll('.faq-answer').forEach(a => a.style.display = 'none');
+                answer.style.display = 'block';
+            }
+        });
+    });
+</script>
+
+</body>
+</html>
